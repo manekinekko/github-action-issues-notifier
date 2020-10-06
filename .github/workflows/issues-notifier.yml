@@ -1,0 +1,24 @@
+name: "Issues Notifier"
+on:
+  issues:
+    types: [opened, edited, assigned, labeled, assigned]
+
+jobs:
+  notifier:
+    runs-on: ubuntu-latest
+    name: notifier
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Notifier
+        uses: ./
+        id: notifier
+        with:
+          smtpHost: ${{ secrets.SMTP_HOST }}
+          smtpPort: ${{ secrets.SMTP_HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          from: ${{ secrets.EMAIL_FROM }}
+          to: ${{ secrets.EMAIL_TO }}
+          bcc: ${{ secrets.EMAIL_BCC }}
+          labels: "critical,urgent,important"

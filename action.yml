@@ -1,0 +1,34 @@
+name: Issues Notifier
+author: Wassim Chegham
+branding:
+  icon: 'activity'
+  color: 'blue'
+description: "Notify maintainers when a critical issue is opened"
+runs:
+  using: "node12"
+  main: "dist/index.js"
+inputs:
+  smtpHost:
+    required: true
+    description: SMTP server address
+  smtpPort:
+    required: true
+    description: SMTP server port
+  username:
+    required: true
+    description: SMTP username
+  password:
+    required: true
+    description: SMTP password
+  from:
+    required: true
+    description: Sender's email
+  to:
+    required: true
+    description: Recipients' email (comma separated)
+  bcc:
+    required: false
+    description: Recipients' email as BCC (comma separated)
+  labels:
+    required: true
+    description: Issue labels to trigger this workflow (comma separated)

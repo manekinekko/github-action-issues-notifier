@@ -1,0 +1,26 @@
+{
+  "name": "github-action-notifier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build index.js --license licenses.txt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manekinekko/github-action-notifier.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/manekinekko/github-action-notifier/issues"
+  },
+  "homepage": "https://github.com/manekinekko/github-action-notifier#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0",
+    "@vercel/ncc": "^0.24.1",
+    "nodemailer": "^6.4.13"
+  }
+}
