@@ -11,7 +11,7 @@ This is a GitHub Action that sends a notification email when an issue was labele
     id: notifier
     with:
       smtpHost: ${{ secrets.SMTP_HOST }}
-      smtpPort: ${{ secrets.SMTP_HOST }}
+      smtpPort: ${{ secrets.SMTP_PORT }}
       username: ${{ secrets.USERNAME }}
       password: ${{ secrets.PASSWORD }}
       from: ${{ secrets.EMAIL_FROM }}
