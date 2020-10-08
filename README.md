@@ -7,7 +7,7 @@ This is a GitHub Action that sends a notification email when an issue was labele
 
 ```yml
   - name: Notifier
-    uses: manekinekko/github-action-issues-notifier@v1
+    uses: manekinekko/github-action-issues-notifier@preview
     id: notifier
     with:
       smtpHost: ${{ secrets.SMTP_HOST }}

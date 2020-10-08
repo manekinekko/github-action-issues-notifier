@@ -15,6 +15,7 @@ const nodemailer = __webpack_require__(4289);
     const issue = getIssue();
     const issueLabels = getIssueLabels();
     const issueAssignees = getIssueAssignees();
+    const issueNumber = getIssueNumber();
 
     if (!issue) {
       console.log("Could not get issue from context. Exiting!");
@@ -22,8 +23,7 @@ const nodemailer = __webpack_require__(4289);
     }
 
     if (issueAssignees.length === 0) {
-      console.log(`Could not find assignees for issue #${number}. Exiting!`);
-      return;
+      console.warn(`Could not find assignees for issue #${issueNumber}`);
     }
 
     const labels = core.getInput("labels", { required: true });
